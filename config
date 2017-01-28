@@ -190,4 +190,14 @@ exec --no-startup-id synclient VertScrollDelta=-113 HorizEdgeScroll=1
 exec_always xmodmap -e "clear lock" #disable caps lock switch
 exec_always xmodmap -e "keysym Caps_Lock = Escape" #set caps_lock as escape
 
+# compton
 exec --no-startup-id compton -f
+
+# wifi
+exec --no-startup-id nm-applet
+
+# touchpad
+exec --no-startup-id synclient VertEdgeScroll=0 VertScrollDelta=-47
+
+
+
