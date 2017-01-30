@@ -17,7 +17,7 @@ bindsym $mod+k focus up
 bindsym $mod+l focus right
 
 # lock
-bindsym $mod+Mod1+l exec i3lock --color 475263
+#bindsym $mod+Mod1+l exec i3lock --color 475263
 
 # move focused window
 bindsym $mod+Shift+h move left
@@ -201,5 +201,32 @@ exec --no-startup-id nm-applet
 # touchpad
 exec --no-startup-id synclient VertEdgeScroll=0 VertScrollDelta=-47
 
+############
 
 
+# screen lock
+#bindsym $mod+Mod1+l exec i3lock -c 000000
+bindsym $mod+Mod1+l exec "~/.config/i3/blurlock.sh"
+exec xautolock -time 15 -locker '~/.config/i3/blurlock.sh' &
+
+# Pulse Audio controls
+#bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 1 +5% #increase sound volume
+#bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 1 -5% #decrease sound volume
+#bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 1 toggle # mute sound
+
+# Screenshot
+bindsym --release Print exec shutter -s -e
+
+# Start i3bar to display a workspace bar (plus the system information i3status finds out, if available)
+#bar {
+#        status_command i3status
+#	position top
+#}
+
+mouse_warping none
+
+#exec xinput set-prop 10 267 -1 -1 -1
+#exec setxkbmap gb
+
+#exec xrandr --output DP1 --auto --left-of VGA1
+#exec compton -f
